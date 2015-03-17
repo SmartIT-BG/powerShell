@@ -81,7 +81,9 @@ foreach ($computerName in $computerNames) {
 
     Write-Host "Uninstall session is ready. Starting uninstall process..."
       
-      $result = Invoke-Command -Session $psSession -ScriptBlock {
+      $result = Invoke-Command -Session $psSession -ArgumentList $productName -ScriptBlock {
+
+        $productName = $args[0]
 
         $symProduct = Get-WmiObject -Class Win32_Product -Filter "Name = '$productName'"
 

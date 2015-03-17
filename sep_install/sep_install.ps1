@@ -34,9 +34,6 @@ if (-not (Test-Path $computerNamesFile)) {
 
 }
 
-# Symantec MSI package UNC path
-#$symPkg = "\\eamdc.easycredit.bg\public_share\Sym\Sep64.msi"
-
 $symPkg = $symPkgUNC
 
 if (-not (Test-Path -Path $symPkg)) {
