@@ -2,10 +2,6 @@ CONTACT:
 
 <admin@smartit.bg>
 
-REQUIREMENTS:
-
-1. Requires PowerShell version >= 3.0 (check with $PSVersionTable.PSVersion)
-
 INSTALL:
 
 1. Requires administrative privileges for local and remote machine;
@@ -18,7 +14,7 @@ INSTALL:
    NOTE: Initialize db and create accounts on machine on which script will be run,
    also, run with same account with which accounts in db are created (because of Secure strings).
   
-    Account creation is needed if you run tasks with "Run whether user is logged in or not" option.
+   Account creation is needed if you run tasks with "Run whether user is logged in or not" option.
 
 USAGE:
 
@@ -28,4 +24,6 @@ USAGE:
   
    If folder isn't exists on remote machine it will be created, also missing parent folders will be created
 
-   WARNING: All tasks that does not exists on local machine folder, but on remote will be deleted from remote folder!
+WARNING: 
+
+All tasks that does not exists on local machine folder, but on remote will be deleted from remote folder!
