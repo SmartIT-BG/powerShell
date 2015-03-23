@@ -4,7 +4,8 @@ filesystemUtil takes utilization of computer volumes via WMI from list of Window
 
 REQUIREMENTS:
 
-  1. WMI access to probed machines 
+  1. WMI access to probed machines
+  2. Microsoft Excel installed
   
 INSTALL:
 
