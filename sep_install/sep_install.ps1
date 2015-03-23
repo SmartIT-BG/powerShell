@@ -52,8 +52,15 @@ Write-Host
 # Get computer names list
 $computerNames = Get-Content $computerNamesFile
 
-# Get user credentials
-$userCredentials = Get-Credential
+try {
+  # Get user credentials
+  $userCredentials = Get-Credential
+
+} catch {
+  Write-Host "Credentials are not supplied."
+  Exit 1
+
+}
 
 foreach ($computerName in $computerNames) {
   
@@ -90,7 +97,7 @@ foreach ($computerName in $computerNames) {
     }
   } else {
 
-    $message = "Computer $computerName is not reachable"
+    $message = "$computerName, is not reachable."
     $message
 
   }
@@ -101,7 +108,7 @@ foreach ($computerName in $computerNames) {
 
     if (($psSession.State -eq "Opened") -and ($psSession.Availability -eq "Available")) {
 
-    Write-Host "Install session is ready. Starting install process... It can take a while."
+      Write-Host "Install session is ready. Starting install process... It can take a while."
       
       $result = Invoke-Command -Session $psSession -ArgumentList "$symPkg" -ScriptBlock {
 
@@ -131,13 +138,22 @@ foreach ($computerName in $computerNames) {
 
       }
 
+    } else {
+      $message = "$computerName, PowerShell session is not operational."
+      $message
+
     }
 
     Remove-PSSession $psSession
     $psSession = $null
 
+  } else {
+    $message = "$computerName, PowerShell session can't be established."
+    $message
+  
   }
 
+  # Log result from remote session
   if($result) {
     Write-Host "$computerName, $result"
     $message = "$computerName, $result"

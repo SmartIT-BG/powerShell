@@ -68,7 +68,7 @@ foreach ($computerName in $computerNames) {
 
   } else {
 
-    $message = "Computer $computerName is not reachable"
+    $message = "$computerName, is not reachable"
     $message
 
   }
@@ -79,7 +79,7 @@ foreach ($computerName in $computerNames) {
 
     if (($psSession.State -eq "Opened") -and ($psSession.Availability -eq "Available")) {
 
-    Write-Host "Uninstall session is ready. Starting uninstall process..."
+      Write-Host "Uninstall session is ready. Starting uninstall process..."
       
       $result = Invoke-Command -Session $psSession -ArgumentList $productName -ScriptBlock {
 
@@ -111,13 +111,22 @@ foreach ($computerName in $computerNames) {
 
       }
 
+    } else {
+      $message = "$computerName, PowerShell session is not operational."
+      $message
+
     }
 
     Remove-PSSession $psSession
     $psSession = $null
 
+  } else {
+    $message = "$computerName, PowerShell session can't be established."
+    $message
+
   }
 
+  # Log result from remote session
   if($result) {
     Write-Host "$computerName, $result"
     $message = "$computerName, $result"
