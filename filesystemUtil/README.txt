@@ -1,7 +1,6 @@
 SmartIT <admin@smartit.bg>
 
-filesystemUtil takes utilization of computer volumes via WMI on list of Windows machines and cooks nice excel report.
-Then it sends this report to email(s) of your choice. It waits random period of time before starting.
+filesystemUtil takes utilization of computer volumes via WMI from list of Windows machines and cooks nice excel report. Then it sends this report to email(s) of your choice. It waits random period of time before starting.
 
 REQUIREMENTS:
 
