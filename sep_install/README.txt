@@ -1,3 +1,7 @@
+REQUIREMENTS:
+
+  1. PowerShell Double-Hop remoting configured
+
 USAGE:
 
 Install:
@@ -14,4 +18,4 @@ Uninstall:
 
   EXAMPLE:
   
-  sep_uninstall.ps1 -computerList "32bit-lit.txt" -productName "Symantec Endpoint Protection"
+  sep_uninstall.ps1 -computerList "32bit-list.txt" -productName "Symantec Endpoint Protection"
