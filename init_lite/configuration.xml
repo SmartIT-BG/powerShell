@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Configuration>
+        <Version ProductVersion="Init-Lite v0.1b" Major="0" Minor="1" Release="b" />
+        <Contact>
+          <Smtp Server="smtp.acme.intranet" UseSSL="True" From="Init-Lite &lt;init-lite@acme.intranet&gt;" To="admin@acme.intranet" CredentialsFile="smtp-credentials" />
+		  <!-- 24 clock format -->
+		  <!-- silent mode only -->
+		  <TimeIntervals>
+		    <TimeInterval Name="Silent1" Start="22:30" End="08:00" />
+			<TimeInterval Name="Silent2" Start="18:00" End="08:00" />
+		  </TimeIntervals>
+        </Contact>
+		<VoIP>
+		  <Servers>
+		    <Server Dial="sip:fromServer1@asterisk.acme.intranet" />
+		  </Servers>
+		</VoIP>
+		<!-- Resources -->
+		<CPU UsageThreshold="96" Active="False" />
+        <Volumes>
+		  <!-- Local Drives -->
+		  <Volume Id="B:" Purpose="Backup" Type="Local" UsageThreshold="90" SizeThreshold="118111600640" Active="True" />
+		  <Volume Id="C:" Purpose="System" Type="Local" UsageThreshold="92" Active="True" />
+		  <Volume Id="D:" Purpose="Database" Type="Local" UsageThreshold="94" Active="True" />
+		  <Volume Id="E:" Purpose="Database,Misc" Type="Local" UsageThreshold="94" Active="True" />
+		  <Volume Id="F:" Purpose="Databse" Type="Local" UsageThreshold="94" Active="True" />
+		  <!-- Remote Drives -->
+		  <Volume Id="D:" Purpose="Misc" Type="Remote" ComputerName="Computer1.acme.intranet" UsageThreshold="60" SizeThreshold="171798691840" Active="False"/>
+		</Volumes>
+        <MSSQL>
+		  <Instance Name="DEFAULT" />
+		  <Databases>
+		    <Database Name="testDB" Active="True" />
+		  </Databases>
+		  <LinkedServers>
+		    <LinkedServer Name="LINKEDSERVER1.ACME.iNTRANET" Active="True" />
+		    <LinkedServer Name="LINKEDSERVER2.ACME.iNTRANET" Active="True" />
+			<LinkedServer Name="LINKEDSERVER3.ACME.iNTRANET" Active="True" />
+			<LinkedServer Name="LINKEDSERVER4.ACME.iNTRANET" Active="True" />
+			<LinkedServer Name="LINKEDSERVER5.ACME.iNTRANET" Active="False" />
+		  </LinkedServers>
+		  <Agent>
+		    <Jobs>
+			  <!-- We need this for backup state checks -->
+			  <Job Name="testDB_backup" Purpose="Backup" />
+			  <Job Name="prodDB_backup" Purpose="Backup" />
+			</Jobs>
+		  </Agent>
+        </MSSQL>
+		<WindowsServices>
+		  <Service Name="Service1" Active="True" />
+		  <Service Name="Service2" Active="True" />
+		  <Service Name="Service3" Active="True" />
+		  <Service Name="Service4" Active="True" />
+		  <Service Name="Service5" Active="True" />
+		  <Service Name="Service6" Active="True" />
+		  <Service Name="Service7" Active="True" />
+		</WindowsServices>
+		<IIS>
+		  <AppPools>
+		    <AppPool Name="AppPool1" Active="True" />
+			<AppPool Name="AppPool2" Active="True" />
+			<AppPool Name="AppPool3" Active="True" />
+			<AppPool Name="AppPool4" Active="True" />
+			<AppPool Name="AppPool5" Active="True" />
+		  </AppPools>
+		  <Sites>
+		    <Site Name="Site1" Active="True" />
+			<Site Name="Site2" Active="True" />
+			<Site Name="Site3" Active="True" />
+			<Site Name="Site4" Active="True" />
+		  </Sites>
+		</IIS>
+		
+</Configuration>
