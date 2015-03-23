@@ -94,22 +94,3 @@ while($true)
 
 
 }
-
-
-Return
-
-# batch mode
-# da chete of fail?
-
-$user = @("EASYCREDIT\task")
-$secret = @("parolka")
-
-$j = 0
-ForEach($i in $user) {
-  
-  $securePassword = ($secret[$j] | ConvertTo-SecureString -AsPlainText -Force) | ConvertFrom-SecureString
-  new-item -path ($dbDriveName):\accounts -accountName $i -securePassword $securePassword -encryptedWithAccount "UNKNOWN"
-
-  $j += 1
-
-}
