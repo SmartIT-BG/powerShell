@@ -39,7 +39,13 @@ Function New-TaskObject($path,$remoteServer)
 
    }
 
-  if(-not $path) { $path = "\" }
+  if(-not $path) { 
+    $path = "\" 
+  
+  } else {
+    $path = "\$path"
+
+  }
   
   $taskObject.GetFolder($path)
 
