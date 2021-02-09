@@ -1,3 +1,7 @@
+CONTACT:
+
+<pavel.zhelyazkov@smartit.bg>
+
 Requirements:
 
 - VMware-PowerCLI

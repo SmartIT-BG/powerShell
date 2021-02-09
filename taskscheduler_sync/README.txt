@@ -1,6 +1,6 @@
 CONTACT:
 
-<admin@smartit.bg>
+<pavel.zhelyazkov@smartit.bg>
 
 INSTALL:
 

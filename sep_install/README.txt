@@ -1,3 +1,7 @@
+CONTACT:
+
+<pavel.zhelyazkov@smartit.bg>
+
 REQUIREMENTS:
 
   1. PowerShell Double-Hop remoting configured

@@ -1,4 +1,6 @@
-SmartIT <admin@smartit.bg>
+CONTACT:
+
+<pavel.zhelyazkov@smartit.bg>
 
 Init-Lite is not a typical monitoring script. :)
 One of its interesting features is phone notifications.

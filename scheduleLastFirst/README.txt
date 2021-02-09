@@ -1,4 +1,6 @@
-SmartIT <admin@smartit.bg>
+CONTACT:
+
+<pavel.zhelyazkov@smartit.bg>
 
 Very simple script, that can permit or not your program to run on last day or first day of the current month.
 
