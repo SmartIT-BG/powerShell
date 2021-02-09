@@ -53,7 +53,7 @@ Examples:
 
 -vCluster
 
-  Име на клъстер, например "Cluster One"
+  Име на клъстер, например "Cluster-One"
 
 -hostName
 
