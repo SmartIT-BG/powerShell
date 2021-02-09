@@ -19,7 +19,7 @@ Usage:
 
 -vCluster
 
-  Име на клъстер, например "Hx5 Cluster"
+  Име на клъстер, например "Cluster-One"
 
 -hostName
 
@@ -42,8 +42,7 @@ Usage:
 
 Examples:
 
-.\vsphere_add_portgroups.ps1 -vServer "vcsa.smartitbg.int" -vCluster "Hx5 Cluster" -hostName "phoenix.easycredit.bg" -vSwitc
-h "vSwitch0" -portGroupsFile "pg.txt"
+.\vsphere_add_portgroups.ps1 -vServer "vcsa.acme" -vCluster "Cluster-One" -hostName "phoenix" -vSwitch "vSwitch0" -portGroupsFile "pg.txt"
 
 
 [vsphere_get_portgroups.ps1]
@@ -54,7 +53,7 @@ h "vSwitch0" -portGroupsFile "pg.txt"
 
 -vCluster
 
-  Име на клъстер, например "Hx5 Cluster"
+  Име на клъстер, например "Cluster One"
 
 -hostName
 
@@ -72,5 +71,4 @@ h "vSwitch0" -portGroupsFile "pg.txt"
 
 Examples:
 
-.\vsphere_get_portgroups.ps1 -vServer "vcsa.smartitbg.int" -vCluster "Hx5 Cluster" -hostName "hydra.easycredit.bg" -vSwitc
-h "vSwitch0" -portGroupsFile "pg.txt"
+.\vsphere_get_portgroups.ps1 -vServer "vcsa.acme" -vCluster "Cluster-One" -hostName "hydra" -vSwitch "vSwitch0" -portGroupsFile "pg.txt"
